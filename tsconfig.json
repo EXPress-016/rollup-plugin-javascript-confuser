@@ -1,0 +1,15 @@
+{
+  "include": ["src/**/*.ts",  "rollup.config.ts"],
+  "compilerOptions": {
+    "strict": false,
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  }
+}
