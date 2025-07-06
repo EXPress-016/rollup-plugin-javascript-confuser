@@ -62,28 +62,7 @@ export default function obfuscatorPlugin(obOptions?: Config) {
 	return {
 		name: "rollup-plugin-javascript-confuser",
 		enforce: "post",
-		/*
-		async transform(src: string, id: string) {
-			if (anymatch(excludeMatcher, id, { dot: true })) {
-				consoleLog("[::plugin-javascript-confuser]::exclude", id);
-				return;
-			}
 
-			if (anymatch(includeMatcher, id)) {
-				consoleLog("[::plugin-javascript-confuser]::include matched", id);
-
-				const obfuscationResult = await obfuscate(src, options);
-
-				const result = { code: obfuscationResult.code } as {
-					code: string;
-				};
-
-				return result;
-			}
-
-			consoleLog("[::plugin-javascript-confuser]::not matched", id);
-		},
-		*/
 		async generateBundle(bundleOptions, bundleObj) {
 			for (const bundleKey of Object.keys(bundleObj)) {
 				const bundle = bundleObj[bundleKey];
