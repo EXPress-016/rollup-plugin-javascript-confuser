@@ -1,6 +1,6 @@
+import anymatch, { type Matcher } from "anymatch";
 import type { Plugin } from "rollup";
 import Obfuscator, { type ObfuscateOptions } from "js-confuser";
-import anymatch, { type Matcher } from "anymatch";
 import {
 	defaultExcludeMatcher,
 	defaultIncludeMatcher,
@@ -13,21 +13,29 @@ export type Config = {
 	/**
 	 * (Array|String|RegExp|Function) String to be directly matched, string with glob patterns, regular expression test, function that takes the testString as an argument and returns a truthy value if it should be matched. default: ```[/\.(jsx?|tsx?|cjs|mjs)$/]```
 	 * [See more](https://github.com/micromatch/anymatch)
-	 */
+	 
+	@default [/\.(jsx?|tsx?|cjs|mjs)$/]
+	*/
 	include?: Matcher;
 	/**
 	 *  (Array|String|RegExp|Function) String to be directly matched, string with glob patterns, regular expression test, function that takes the testString as an argument and returns a truthy value if it should be matched. default: ```[/node_modules/, /\.nuxt/]```
 	 * [See more](https://github.com/micromatch/anymatch)
-	 */
+	
+	@default [/node_modules/]
+	*/
 	exclude?: Matcher;
 	/**
-	 * Your js-confuser options
-	 * [See more options](https://js-confuser.com/docs/options)
-	 */
+	* Your js-confuser options
+	* [See more options](https://js-confuser.com/docs/options)
+	
+	@default { target: "browser", preset: "low" }
+	*/
 	options?: ObfuscateOptions;
 	/**
-	 * Used for debugging, Print out the path of matching or excluding files
-	 */
+	* Used for debugging, Print out the path of matching or excluding files
+	
+	@default false
+	*/
 	debugger?: boolean;
 };
 
