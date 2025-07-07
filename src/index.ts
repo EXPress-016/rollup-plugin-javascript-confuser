@@ -63,7 +63,7 @@ export default function obfuscatorPlugin(obOptions?: Config) {
 		name: "rollup-plugin-javascript-confuser",
 		enforce: "post",
 
-		async generateBundle(bundleOptions, bundleObj) {
+		async generateBundle(_, bundleObj) {
 			for (const bundleKey of Object.keys(bundleObj)) {
 				const bundle = bundleObj[bundleKey];
 				if (bundle.type !== "chunk") {
