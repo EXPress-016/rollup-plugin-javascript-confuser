@@ -67,7 +67,9 @@
 		"typescript": "^5.8.3"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"README.md",
+		"LICENSE"
 	],
 	"packageManager": "pnpm@10.11.0"
 }
